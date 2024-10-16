@@ -6,44 +6,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Focus Timer 2.0</title>
-
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="style.css" />
-
-    <script type="module" src="./scripts/main.js" defer></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="main.js" defer></script>
   </head>
   <body>
     <div class="main">
       <section class="data">
         <div class="timer-data">
-          <input type="number" name="" id="first-timer" placeholder="00" maxlength="2"/>
-          <span class="colon">:</span>
-          <input type="number" name="" id="second-timer" placeholder="00" maxlength="2"/>
+          <!-- <span class="minutes">25</span><span class="separator">:</span><span class="seconds">00</span> -->
+          <input type="number" class="minutes" min="0" max="59" value="25">
+          <span class="separator">:</span>
+          <input type="number" class="seconds" min="0" max="59" value="00">
         </div>
         <div class="wrapper-icons">
-          <button id="btn-play">
-            <img src="./assets/icons/play.svg" alt="">
+          <button id="btn-play" class="btn-props">
+            <i class="ph ph-play"></i>
           </button>
-          <button id="btn-stop">
-            <img src="./assets/icons/stop.svg" alt="">
+          <button id="btn-pause" class="btn-props"><i class="ph-bold ph-pause-circle"></i></button>
+          <button id="btn-stop" class="btn-props">
+            <i class="ph ph-stop-circle"></i>
           </button>
-          <button id="btn-plus">
-            <img src="./assets/icons/plus.svg" alt="">
+          <button id="btn-plus" class="btn-props">
+            <i class="ph ph-plus-circle"></i>
           </button>
-          <button id="btn-minus">
-            <img src="./assets/icons/minus.svg" alt="">
+          <button id="btn-minus" class="btn-props">
+            <i class="ph ph-minus-circle"></i>
           </button>          
         </div>
       </section>
       <section class="cards">
-        <div class="card"><img src="./assets/icons/florest.svg" alt="Ilustração de uma árvore" srcset=""></div>
-        <div class="card"><img src="./assets/icons/rain.svg" alt="Ilustração de uma nuvem com chuva"></div>
-        <div class="card"><img src="./assets/icons/coffe.svg" alt="Ilustração de uma cafeteria"></div>
-        <div class="card"><img src="./assets/icons/fireplace.svg" alt="Ilustração de uma fogueira"></div>
+        <div class="card" data-sound="forest"><img src="./assets/icons/florest.svg" alt="Ilustração de uma árvore" ></div>
+        <div class="card" data-sound="rain"><img src="./assets/icons/rain.svg" alt="Ilustração de uma nuvem com chuva"></div>
+        <div class="card" data-sound="coffee"><img src="./assets/icons/coffe.svg" alt="Ilustração de uma cafeteria"></div>
+        <div class="card" data-sound="fireplace"><img src="./assets/icons/fireplace.svg" alt="Ilustração de uma fogueira"></div>
       </section>
     </div>
   </body>

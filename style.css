@@ -5,9 +5,9 @@
 }
 
 :root {
-  --gray-900: var(#323238);
-  --white: var(#ffffff);
-  --light-blue-500: var(#02799d);
+  --gray-900: #323238;
+  --white: #ffffff;
+  --light-blue-500: #2ba3c8;
 
   /* font-size: clamp(40%, 1% + 2vw, 62.5%); */
   font-size: 62.5%;
@@ -15,7 +15,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-/* webkit*/
+/* Estilos para inputs numéricos */
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
@@ -37,14 +37,15 @@ input[type="number"] {
 
 .main .timer-data {
   width: 34.2rem;
-  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
 
 }
 
-.main input {
+.minutes,
+.seconds,
+.separator {
   width: 16.2rem;
   border: none;
   outline: none;
@@ -54,18 +55,13 @@ input[type="number"] {
   line-height: 14.8rem;
   text-transform: uppercase;
   text-align: center;
-  color: #323238;
+  color: var(--gray-900);
 }
 
 input::placeholder {
-  color: #323238;
+  color: var(--gray-900);
 }
 
-.colon {
-  font-size: 12.6rem;
-  line-height: 14.8rem;
-  color: #323238;
-}
 .wrapper-icons {
   display: flex;
   align-items: center;
@@ -77,9 +73,8 @@ input::placeholder {
   background: transparent;
   cursor: pointer;
 }
-.wrapper-icons button {
-  /* width: 34.2rem; */
 
+.wrapper-icons button {
   border: none;
   background: transparent;
   cursor: pointer;
@@ -100,16 +95,33 @@ input::placeholder {
   width: 13.8rem;
   height: 15.2rem;
 
-
   background: #e1e1e6;
   border-radius: 2.4rem;
 
   cursor: pointer;
 
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));  
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
   transition: all 200ms ease-out;
+
+  user-select: none;
 }
 
 .card:hover {
   transform: scale(1.1);
+}
+
+.btn-props {
+  font-size: 5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-pause {
+  display: none;
+}
+
+.cards .card.active-card {
+  background: var(--light-blue-500);
 }
